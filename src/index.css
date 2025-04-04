@@ -1,13 +1,237 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+html, body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #daebeb;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+/* About.js */
+.typing-animation {
+  font-family: 'Courier New', Courier, monospace; /* Example of a typed font */
+  /* white-space: nowrap; Prevent text from wrapping */
+  overflow: hidden; 
+}
+
+.cursor {
+  display: inline-block;
+  width: 2px; /* Adjust width of the cursor */
+  height: 1.5rem; /* Adjust height to match text height */
+  background-color: #1a3269; /* Cursor color */
+  margin-left: 5px;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Navbar */
+.navbar {
+  background-color: transparent; /* Transparent background by default */
+  transition: background-color 0.3s ease; /* Smooth transition for sticky effect */
+}
+
+.navbar.sticky {
+  background-color: rgba(255, 255, 255, 0.9); /* Light background when scrolled */
+  box-shadow: 0 2px 4px rgba(117, 98, 98, 0.1); /* Subtle shadow for depth */
+}
+
+.navbar-nav .nav-link {
+  color: #091f6d; /* Dark text color */
+  font-weight: 700;
+  padding: 1rem 1rem;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+  color: #527a9f; 
+}
+
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 0, 0, 0.5)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.navbar.sticky .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 0, 0, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+
+.ibm-plex-serif {
+  font-family: "IBM Plex Serif", serif;
+  font-style: normal;
+  color: #091f6d;
+}
+
+/* Experiences page */
+.experience-section {
+  padding: 3rem 1rem;
+  background-color: #daebeb
+}
+
+.experience-title {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: #1a3269;
+}
+
+.timeline {
+  position: relative;
+  margin: 0 auto;
+  padding-left: 40px;
+  max-width: 800px;
+  border-left: 3px solid #ff5733;
+}
+
+.timeline-item {
+  margin-bottom: 2.5rem;
+  position: relative;
+}
+
+.timeline-dot {
+  width: 16px;
+  height: 16px;
+  background-color: #ff5733;
+  border-radius: 50%;
+  position: absolute;
+  left: -9px;
+  top: 4px;
+}
+
+.timeline-content {
+  background: white;
+  padding: 1rem;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-content h3 {
+  margin-bottom: 0.3rem;
+  font-weight: 700;
+  font-size: 17px;
+}
+
+.timeline-content h5 {
+  margin-bottom: 0.5rem;
+  font-size: 16px;
+}
+
+.timeline-content p {
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* Projects */
+
+/* Body styling */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Main container for projects */
+#project-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+/* Project card styling */
+#project-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid #1c5867;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #ebc0b6;
+}
+
+.left-column {
+  flex: 1 1 30%; /* Slightly less than the right column */
+  padding: 20px;
+  padding-top: 45px;
+}
+
+.right-column {
+  flex: 2 1 70%; /* Larger width than the left column */
+}
+
+.left-column h2 {
+  font-size: 1.5rem;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+/* Optional: Add some basic styling for the container and project cards */
+#project-container {
+  padding: 50px 100px;
+}
+
+
+.github-button-container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.github-button {
+  padding: 12px 40px;
+  background-color: #db6f4e; /* GitHub's primary dark color */
+  color: white;
+  border: 2px solid #24292f;
+  border-radius: 30px; /* Rounded corners */
+  font-size: 1.1rem;
+  font-weight: 600; /* Slightly bolder text */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 1px;
+}
+
+.github-button:hover {
+  background-color: #f5d1d1; /* White on hover */
+  color: #5c7492; /* Dark text on hover */
+  border-color: #24292f; /* Matching border color on hover */
+}
+
+.github-button:focus {
+  outline: none;
 }
