@@ -17,8 +17,7 @@ code {
 
 /* About.js */
 .typing-animation {
-  font-family: 'Courier New', Courier, monospace; /* Example of a typed font */
-  /* white-space: nowrap; Prevent text from wrapping */
+  font-family: 'Courier New', Courier, monospace; 
   overflow: hidden; 
 }
 

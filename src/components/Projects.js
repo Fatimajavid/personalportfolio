@@ -62,7 +62,18 @@ const Projects = () => {
 
   return (
     <div id="project-container" style={{ padding: "100px" }}>
-    <h1 className="experience-title ibm-plex-serif">My Projects</h1>
+
+    <h1 className="experience-title ibm-plex-serif" style={{ marginBottom: "-28px" }}>My Projects</h1>
+
+      <div className="github-button-container" style={{ textAlign: "center", marginBottom: "25px" }}>
+        <a href="https://github.com/fatimajavid" target="_blank" rel="noopener noreferrer">
+            <button className="github-button justify-content-center" >
+            <AiFillGithub size={30} style={{ marginRight: "8px" }} />
+            To explore these projects and many more, please follow me on GitHub!
+            </button>
+        </a>
+      </div>
+
       {projects.map((project, index) => (
         <div className="project-card" key={index}>
           <div className="left-column">
@@ -78,14 +89,6 @@ const Projects = () => {
           </div>
         </div>
       ))}
-        <div className="github-button-container" style={{ marginTop: "20px", textAlign: "center" }}>
-        <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
-            <button className="github-button justify-content-center" >
-            <AiFillGithub size={30} style={{ marginRight: "8px" }} />
-            To explore these projects and many more, please follow me on GitHub!
-            </button>
-        </a>
-        </div>
     </div>
   );
 };

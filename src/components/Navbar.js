@@ -37,8 +37,8 @@ function NavBar() {
       expand="md"
       className={navColour ? "sticky" : "navbar"}
       style={{
-        backgroundColor: expand ? "#ff5733" : "transparent", // Set background color for the entire navbar when expanded
-        transition: "background-color 0.3s ease", // Smooth transition
+        backgroundColor: expand ? "#ff5733" : "#daebeb", 
+        transition: "background-color 0.3s ease",
       }}
     >
       <Container>
