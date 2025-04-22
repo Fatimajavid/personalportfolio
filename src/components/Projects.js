@@ -1,7 +1,6 @@
 import React from 'react';
 import { AiFillGithub } from 'react-icons/ai'; 
 
-// Projects container component
 const Projects = () => {
   const projects = [
     {
