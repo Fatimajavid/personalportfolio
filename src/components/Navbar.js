@@ -37,7 +37,7 @@ function NavBar() {
       expand="md"
       className={navColour ? "sticky" : "navbar"}
       style={{
-        backgroundColor: expand ? "#ff5733" : "#daebeb", 
+        backgroundColor: expand ? "#daebeb" : "#daebeb", 
         transition: "background-color 0.3s ease",
       }}
     >
@@ -48,7 +48,7 @@ function NavBar() {
             updateExpanded(expand ? false : "expanded");
           }}
           style={{
-            backgroundColor: expand ? "#ff5733" : "transparent", 
+            backgroundColor: expand ? "#daebeb" : "transparent", 
             border: "none",
             padding: "5px 10px",
             borderRadius: "5px",

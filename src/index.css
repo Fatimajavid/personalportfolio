@@ -51,15 +51,18 @@ code {
 }
 
 .navbar-nav .nav-link {
-  color: #091f6d; /* Dark text color */
-  font-weight: 700;
-  padding: 1rem 1rem;
-  transition: color 0.3s ease;
+  color: #091f6d;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 1rem;
+  font-family: 'IBM Plex Serif', serif;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
 }
 
 .navbar-nav .nav-link:hover,
 .navbar-nav .nav-link:focus {
-  color: #527a9f; 
+  color: #007F5F;
+  border-bottom: 2px solid #007F5F;
 }
 
 .navbar-toggler {
@@ -82,16 +85,24 @@ code {
 }
 
 /* Experiences page */
+
 .experience-section {
-  padding: 3rem 1rem;
-  background-color: #daebeb
+  padding: 4rem 20px; 
+  background-color: #daebeb;
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
 }
 
-.experience-title {
-  text-align: center;
-  margin-bottom: 2rem;
-  font-size: 2rem;
-  color: #1a3269;
+@media (min-width: 992px) { 
+  .experience-section {
+    max-width: 1300px; 
+    margin: 0 auto; 
+    flex-direction: row; 
+    align-items: flex-start; 
+    padding: 3rem 0; 
+    justify-content: space-between; 
+  }
 }
 
 .timeline {
@@ -110,7 +121,7 @@ code {
 .timeline-dot {
   width: 16px;
   height: 16px;
-  background-color: #ff5733;
+  background-color: #ff6b4a;
   border-radius: 50%;
   position: absolute;
   left: -9px;
@@ -126,111 +137,160 @@ code {
 
 .timeline-content h3 {
   margin-bottom: 0.3rem;
-  font-weight: 700;
-  font-size: 17px;
+  font-weight: 430;
+  font-size: 14.5px;
 }
 
 .timeline-content h5 {
   margin-bottom: 0.5rem;
-  font-size: 16px;
+  font-weight: 450;
+  font-size: 14px;
+  color: #007F5F;
 }
 
 .timeline-content p {
-  font-size: 13px;
+  font-size: 12px;
   line-height: 1.5;
 }
 
-/* Projects */
-
-/* Body styling */
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-  color: #333;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+.timeline-heading {
+  font-size: 16px;
 }
 
-/* Main container for projects */
-#project-container {
+.intro-text{
+  font-size: 14px; 
+}
+
+.award-list {
+  font-size: 14px; 
+  line-height: 1.5;
+  color: #1a3269;
+}
+
+
+/* Projects page */
+.projects-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  display: grid; /* Use CSS Grid */
+  grid-template-columns: repeat(auto-fit, minmax(450px, 2fr)); /* Create responsive columns */
   gap: 20px;
 }
 
-/* Project card styling */
-#project-container {
-  display: flex;
+.project {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  border-left: 5px solid #ff6b4a;
+  padding: 1.5rem 2rem;
+  display: flex; /* Default flex for row layout */
+  align-items: flex-start;
+  flex-direction: row; /* Default to row */
+}
+
+/* Style for the layout where image is below text */
+.project[style*="flex-direction: column"] { /* Target projects with inline style for column */
+  align-content: center;
   flex-direction: column;
 }
 
-.project-card {
+.project-details {
+  flex-grow: 1;
+  margin-right: 1rem; /* Spacing for row layout */
+}
+
+.project[style*="flex-direction: column"] .project-details {
+  margin-right: 0; /* Remove right margin for column layout */
+  margin-bottom: 1rem; /* Add bottom margin to separate text and image */
+}
+
+.project-image {
+  max-width: 80px;
+  height: auto;
+  border-radius: 12px;
+}
+
+.project[style*="flex-direction: column"] .project-image {
+  max-width: 100%; 
+}
+
+.header {
   display: flex;
-  flex-direction: row;
-  border: 1px solid #1c5867;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background-color: #ebc0b6;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
 }
 
-.left-column {
-  flex: 1 1 30%; /* Slightly less than the right column */
-  padding: 20px;
-  padding-top: 45px;
+.header h2 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #009E60;
 }
 
-.right-column {
-  flex: 2 1 70%; /* Larger width than the left column */
+.header a {
+  text-decoration: none;
+  font-weight: 500;
+  color: #475569;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s;
 }
 
-.left-column h2 {
-  font-size: 1.5rem;
+.header a:hover {
+  color: #091f6d;
 }
 
-ul {
-  list-style-type: none;
-  padding-left: 0;
+.project h3 {
+  margin-bottom: 0.5rem;
+  font-size: 18px;
+  color: #527a9f;
 }
 
-li {
-  margin-bottom: 10px;
+.tech {
+  font-size: 14px;
+  font-weight: 400;
+  color: #007F5F;
+  margin-bottom: 1rem;
+}
+/* "#007F5F" */
+
+.project li {
+  font-size: 12px;
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+  text-align: left;
 }
 
-/* Optional: Add some basic styling for the container and project cards */
-#project-container {
-  padding: 50px 100px;
+.project-row {
+  display: flex;
+  align-items: flex-start;
 }
 
-
-.github-button-container {
+.button-container {
   text-align: center;
-  margin-top: 50px;
+  margin-top: 10px;
 }
 
-.github-button {
-  padding: 12px 40px;
-  background-color: #db6f4e; /* GitHub's primary dark color */
-  color: white;
-  border: 2px solid #24292f;
-  border-radius: 30px; /* Rounded corners */
-  font-size: 1.1rem;
-  font-weight: 600; /* Slightly bolder text */
+.button {
+  padding: 10px 10px;
+  background-color: white;
+  color: #007F5F;
+  border: 2px solid #007F5F;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 400;
   cursor: pointer;
   transition: all 0.3s ease;
   letter-spacing: 1px;
+  text-decoration: none; 
 }
 
-.github-button:hover {
-  background-color: #f5d1d1; /* White on hover */
-  color: #5c7492; /* Dark text on hover */
-  border-color: #24292f; /* Matching border color on hover */
+.button:hover {
+  background-color: #e0f3eb;
+  color: #045c47;
+  border-color: #045c47;
 }
 
-.github-button:focus {
+.button:focus {
   outline: none;
 }
