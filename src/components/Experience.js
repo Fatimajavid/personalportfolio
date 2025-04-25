@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
 import me from "../images/meicon.png";
+import resume from "../images/FatimaResume.pdf";
 import "../index.css";
 
 // Separate work and extracurricular experiences
@@ -126,7 +127,7 @@ function Experience() {
         {/* Resume Button */}
         <div className="text-center mt-3" style={{ paddingBottom: "2rem" }}>
           <a
-            href="/path-to-your-resume.pdf"  // Update this path
+            href={resume}
             target="_blank"
             rel="noopener noreferrer"
             className="button"
